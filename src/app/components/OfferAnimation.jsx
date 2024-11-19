@@ -8,19 +8,56 @@ export default function OfferAnimation() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const offerings = [
-    { title: "Sales & Marketing Prowess", color: "bg-sky-100 text-sky-700" },
-    { title: "Operational Excellence", color: "bg-orange-100 text-orange-700" },
-    { title: "Market Intelligence", color: "bg-slate-100 text-slate-700" },
-    { title: "Regulatory Expertise", color: "bg-red-100 text-red-700" },
+    {
+      title: "Sales & Marketing Prowess",
+      color: "bg-sky-100 text-sky-700",
+      Icon: "/images/Sales.png",
+    },
+    {
+      title: "Operational Excellence",
+      color: "bg-orange-100 text-orange-700",
+      Icon: "/images/Excellence.png",
+    },
+    {
+      title: "Market Intelligence",
+      color: "bg-slate-100 text-slate-700",
+      Icon: "/images/intelligence.png",
+    },
+    {
+      title: "Regulatory Expertise",
+      color: "bg-red-100 text-red-700",
+      Icon: "/images/Network.png",
+    },
     {
       title: "Superior Customer Service",
       color: "bg-amber-100 text-amber-700",
+      Icon: "/images/Customer.png",
     },
-    { title: "Financial Efficiency", color: "bg-purple-100 text-purple-700" },
-    { title: "Tech Savvy", color: "bg-teal-100 text-teal-700" },
-    { title: "Strong Network", color: "bg-lime-100 text-lime-700" },
-    { title: "Partnership Mindset", color: "bg-blue-100 text-blue-700" },
-    { title: "Faster-go-to-market", color: "bg-violet-100 text-violet-700" },
+    {
+      title: "Financial Efficiency",
+      color: "bg-purple-100 text-purple-700",
+      Icon: "/images/Efficiency.png",
+    },
+    {
+      title: "Tech Savvy",
+      color: "bg-teal-100 text-teal-700",
+      Icon: "/images/Sales.png",
+    },
+    {
+      title: "Strong Network",
+      color: "bg-lime-100 text-lime-700",
+      Icon: "/images/Network.png",
+    },
+    {
+      title: "Partnership Mindset",
+      color: "bg-blue-100 text-blue-700",
+      Icon: "/images/Partnership.png",
+    },
+    {
+      title: "Faster-go-to-market",
+      color: "bg-violet-100 text-violet-700",
+      Icon: "/images/market.png",
+    },
   ];
 
   useEffect(() => {
@@ -32,12 +69,14 @@ export default function OfferAnimation() {
   }, [offerings.length]);
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 flex flex-col items-center justify-center ">
-      <h1 className="text-4xl font-bold mb-12 text-purple-800">WE OFFER</h1>
+    <div className="min-h-screen bg-gray-50 p-4 flex flex-col items-center justify-center py-40">
+      <h1 className="text-3xl tracking-tighter sm:text-4xl md:text-5xl font-bold mb-12">
+        WE OFFER
+      </h1>
       <div className="relative w-[600px] h-[900px]">
         {offerings.map((offering, index) => {
           const angle = (index * 360) / offerings.length;
-          const radius = 350; // Distance from center
+          const radius = 400; // Distance from center
           const x = radius * Math.cos((angle - 90) * (Math.PI / 180));
           const y = radius * Math.sin((angle - 90) * (Math.PI / 180));
 
@@ -67,6 +106,7 @@ export default function OfferAnimation() {
               >
                 {index + 1}
               </div>
+              <img src={offering.Icon} className="w-10 h-10 md:w-20 md:h-20" />
               {offering.title}
             </motion.div>
           );
@@ -100,7 +140,7 @@ export default function OfferAnimation() {
                   position: "absolute",
                   left: midX,
                   top: midY,
-                  transform: `translate(-50%, -50%) rotate(${Math.atan2(
+                  transform: `translate(-50%, 200%) rotate(${Math.atan2(
                     endY - startY,
                     endX - startX
                   )}rad)`,
