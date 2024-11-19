@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 function Footer() {
@@ -23,24 +24,24 @@ function Footer() {
             </h4>
             <ul className="space-y-4 text-gray-200 text-sm">
               <li>
-                <a href="/" className=" hover:text-white ">
-                  Home
-                </a>
+                <Link href="/">
+                  <p className=" hover:text-white ">Home</p>
+                </Link>
               </li>
               <li>
-                <a href="/about" className=" hover:text-white">
-                  About
-                </a>
+                <Link href="/about">
+                  <p className=" hover:text-white">About</p>
+                </Link>
               </li>
               <li>
-                <a href="/" className=" hover:text-white">
-                  Services
-                </a>
+                <Link href="/">
+                  <p className=" hover:text-white">Services</p>
+                </Link>
               </li>
               <li>
-                <a href="/contact-us" className=" hover:text-white">
-                  Contact
-                </a>
+                <Link href="/contact-us">
+                  <p className=" hover:text-white">Contact</p>
+                </Link>
               </li>
             </ul>
           </div>
